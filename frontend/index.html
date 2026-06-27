@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="New York State Patrol traffic citation management system." />
+  <title>NY State Patrol &middot; Citation Management</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-component="navbar" data-active="home"></header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__inner container">
+        <div class="hero__copy">
+          <span class="eyebrow">New York State Patrol</span>
+          <h1 class="hero__title">Traffic Citation Management System</h1>
+          <p class="hero__lead">
+            A secure, centralised platform for issuing, tracking and resolving
+            traffic notices across every district in the state. Built for the
+            officers on the road and the drivers they serve.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="login-driver.html">Driver portal</a>
+            <a class="btn btn--ghost" href="login-admin.html">Officer portal</a>
+            <a class="btn btn--text" href="register.html">Create driver account &rarr;</a>
+          </div>
+        </div>
+        <aside class="hero__panel" aria-hidden="true">
+          <div class="hero__badge">
+            <span class="hero__badge-label">SYSTEM STATUS</span>
+            <span class="hero__badge-value" id="api-status">checking&hellip;</span>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>11</strong><span>Domain entities</span></li>
+            <li><strong>JWT</strong><span>Secure auth</span></li>
+            <li><strong>2</strong><span>User portals</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section container" id="features">
+      <header class="section__header">
+        <h2>Why this platform</h2>
+        <p>Engineered for the realities of roadside enforcement and the public it serves.</p>
+      </header>
+      <div class="features">
+        <article class="feature">
+          <div class="feature__icon">&#9888;</div>
+          <h3>Issue notices in seconds</h3>
+          <p>Officers create, update and resolve citations from one screen with full audit trail.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">&#128737;</div>
+          <h3>Role-based access</h3>
+          <p>Drivers can only see their own record. Administrators see the full operational picture.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">&#128202;</div>
+          <h3>Live operational stats</h3>
+          <p>Aggregate dashboards summarise activity by district, violation type and officer.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">&#128241;</div>
+          <h3>Responsive on any device</h3>
+          <p>Optimised layouts from 320&nbsp;px mobile to 1920&nbsp;px desktop displays.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container two-col">
+        <div>
+          <h2>For drivers</h2>
+          <p>Create an account in minutes, view every citation issued against your licence and keep your contact details up to date.</p>
+          <a class="btn btn--primary" href="register.html">Register as a driver</a>
+        </div>
+        <div>
+          <h2>For officers</h2>
+          <p>Sign in with your administrator credentials to manage notices, browse statistics and access the full citation register.</p>
+          <a class="btn btn--secondary" href="login-admin.html">Officer sign in</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; New York State Patrol &middot; Citation Management</span>
+      <span class="footer__meta">Full Stack Development assignment</span>
+    </div>
+  </footer>
+
+  <div data-component="toast-host"></div>
+  <script type="module" src="js/pages/landing.js"></script>
+</body>
+</html>

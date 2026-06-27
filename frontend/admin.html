@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Officer dashboard &middot; NY State Patrol</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-component="navbar" data-active="admin"></header>
+
+  <main id="main" class="container app-shell">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><span>Officer portal</span></li>
+        <li aria-current="page">Dashboard</li>
+      </ol>
+    </nav>
+
+    <section class="page-header">
+      <div>
+        <span class="eyebrow eyebrow--accent">Officer portal</span>
+        <h1>Operations dashboard</h1>
+        <p class="page-header__sub" id="admin-subtitle">Aggregate view of every citation issued in the system.</p>
+      </div>
+      <div class="page-header__actions">
+        <a class="btn btn--primary" href="admin-citations.html">Manage citations</a>
+        <button class="btn btn--text" id="logout-btn" type="button">Sign out</button>
+      </div>
+    </section>
+
+    <section class="card-grid card-grid--summary" id="admin-summary" aria-live="polite">
+      <article class="stat-card"><span class="stat-card__label">Total citations</span><strong id="stat-total-citations">&mdash;</strong></article>
+      <article class="stat-card"><span class="stat-card__label">Warnings</span><strong id="stat-total-warnings">&mdash;</strong></article>
+      <article class="stat-card"><span class="stat-card__label">Registered drivers</span><strong id="stat-total-drivers">&mdash;</strong></article>
+      <article class="stat-card"><span class="stat-card__label">Registered vehicles</span><strong id="stat-total-vehicles">&mdash;</strong></article>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="panel">
+        <header class="panel__header">
+          <h2>Citations by violation type</h2>
+        </header>
+        <div id="chart-by-violation" class="chart" aria-live="polite"></div>
+      </section>
+
+      <section class="panel">
+        <header class="panel__header">
+          <h2>Citations by district</h2>
+        </header>
+        <div id="chart-by-district" class="chart" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <header class="panel__header">
+        <h2>Recent activity</h2>
+        <p class="panel__sub">Five most recent notices across all districts.</p>
+      </header>
+      <div id="recent-activity" class="notices" aria-live="polite">
+        <div class="empty-state" data-state="loading">Loading activity&hellip;</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; New York State Patrol</span>
+    </div>
+  </footer>
+
+  <div data-component="toast-host"></div>
+  <script type="module" src="js/pages/admin.js"></script>
+</body>
+</html>

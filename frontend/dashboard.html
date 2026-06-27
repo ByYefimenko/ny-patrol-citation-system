@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver dashboard &middot; NY State Patrol</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-component="navbar" data-active="dashboard"></header>
+
+  <main id="main" class="container app-shell">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Driver dashboard</li>
+      </ol>
+    </nav>
+
+    <section class="page-header">
+      <div>
+        <span class="eyebrow">Driver portal</span>
+        <h1 id="dashboard-greeting">Your dashboard</h1>
+        <p class="page-header__sub" id="dashboard-subtitle">Loading your account&hellip;</p>
+      </div>
+      <div class="page-header__actions">
+        <button class="btn btn--ghost" id="refresh-btn" type="button">Refresh</button>
+        <button class="btn btn--text" id="logout-btn" type="button">Sign out</button>
+      </div>
+    </section>
+
+    <section class="card-grid card-grid--summary" id="driver-summary" aria-live="polite">
+      <article class="stat-card">
+        <span class="stat-card__label">Citations</span>
+        <strong class="stat-card__value" id="stat-citations">&mdash;</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-card__label">Warnings</span>
+        <strong class="stat-card__value" id="stat-warnings">&mdash;</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-card__label">Most recent</span>
+        <strong class="stat-card__value stat-card__value--sm" id="stat-recent">&mdash;</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <header class="panel__header">
+        <h2>My notices</h2>
+        <div class="panel__controls">
+          <label class="visually-hidden" for="notice-filter">Filter notices</label>
+          <input id="notice-filter" type="search" placeholder="Search by ticket, road or violation&hellip;" />
+          <select id="notice-status">
+            <option value="all">All notices</option>
+            <option value="citation">Citations only</option>
+            <option value="warning">Warnings only</option>
+          </select>
+        </div>
+      </header>
+      <div id="notices-container" class="notices" aria-live="polite">
+        <div class="empty-state" data-state="loading">Loading notices&hellip;</div>
+      </div>
+    </section>
+
+    <section class="panel" id="profile-panel">
+      <header class="panel__header">
+        <h2>Profile</h2>
+        <p class="panel__sub">Update your contact details. Other identity fields are managed by your district office.</p>
+      </header>
+      <form id="profile-form" class="form form--grid" novalidate>
+        <div class="form-row">
+          <label for="profile-full-name">Full name</label>
+          <input id="profile-full-name" name="full_name" type="text" disabled />
+        </div>
+        <div class="form-row">
+          <label for="profile-licence">Driver licence</label>
+          <input id="profile-licence" name="licence_no" type="text" disabled />
+        </div>
+        <div class="form-row">
+          <label for="profile-email">Email<span aria-hidden="true">*</span></label>
+          <input id="profile-email" name="email" type="email" required maxlength="120" />
+          <p class="form-row__hint" data-error-for="email"></p>
+        </div>
+        <div class="form-row">
+          <label for="profile-phone">Phone<span aria-hidden="true">*</span></label>
+          <input id="profile-phone" name="phone" type="tel" required maxlength="30" />
+          <p class="form-row__hint" data-error-for="phone"></p>
+        </div>
+        <div class="form-row form-row--full">
+          <label for="profile-address">Address</label>
+          <input id="profile-address" name="address_line" type="text" maxlength="100" />
+          <p class="form-row__hint" data-error-for="address_line"></p>
+        </div>
+        <div class="form-actions form-row--full">
+          <button type="submit" class="btn btn--primary" id="profile-submit">
+            <span class="btn__label">Save changes</span>
+            <span class="btn__spinner" hidden></span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; New York State Patrol</span>
+    </div>
+  </footer>
+
+  <div data-component="toast-host"></div>
+  <div data-component="modal-host"></div>
+  <script type="module" src="js/pages/dashboard.js"></script>
+</body>
+</html>

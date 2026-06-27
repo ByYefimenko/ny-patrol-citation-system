@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Officer sign in &middot; NY State Patrol</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-component="navbar" data-active="login-admin"></header>
+
+  <main id="main" class="auth-shell">
+    <section class="auth-card auth-card--accent">
+      <header class="auth-card__header">
+        <span class="eyebrow eyebrow--accent">Officer portal</span>
+        <h1>Administrator sign in</h1>
+        <p>Authorised personnel only. Sessions are protected by short-lived JWT tokens.</p>
+      </header>
+
+      <form id="login-form" class="form" data-required-role="admin" novalidate>
+        <div class="form-row">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" required />
+          <p class="form-row__hint" data-error-for="username"></p>
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <p class="form-row__hint" data-error-for="password"></p>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn--secondary" id="login-submit">
+            <span class="btn__label">Sign in</span>
+            <span class="btn__spinner" hidden></span>
+          </button>
+        </div>
+        <p class="form-footer">
+          Default seeded credentials: <code>admin</code> / <code>password</code>.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; New York State Patrol</span>
+    </div>
+  </footer>
+
+  <div data-component="toast-host"></div>
+  <script type="module" src="js/pages/login-admin.js"></script>
+</body>
+</html>

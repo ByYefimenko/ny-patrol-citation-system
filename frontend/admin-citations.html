@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage citations &middot; NY State Patrol</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-component="navbar" data-active="admin-citations"></header>
+
+  <main id="main" class="container app-shell">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admin.html">Officer dashboard</a></li>
+        <li aria-current="page">Citation management</li>
+      </ol>
+    </nav>
+
+    <section class="page-header">
+      <div>
+        <span class="eyebrow eyebrow--accent">Officer portal</span>
+        <h1>Citation management</h1>
+        <p class="page-header__sub">Create, edit and revoke notices issued anywhere in the state.</p>
+      </div>
+      <div class="page-header__actions">
+        <button class="btn btn--primary" id="create-btn" type="button">New citation</button>
+        <a class="btn btn--ghost" href="admin.html">Back to dashboard</a>
+        <button class="btn btn--text" id="logout-btn" type="button">Sign out</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <header class="panel__header">
+        <h2>All notices</h2>
+        <div class="panel__controls">
+          <label class="visually-hidden" for="citations-filter">Search citations</label>
+          <input id="citations-filter" type="search" placeholder="Filter by ticket, driver, road or VIN&hellip;" />
+        </div>
+      </header>
+      <div class="table-wrap">
+        <table class="data-table" id="citations-table">
+          <thead>
+            <tr>
+              <th scope="col">Ticket</th>
+              <th scope="col">Issued</th>
+              <th scope="col">Driver</th>
+              <th scope="col">Vehicle</th>
+              <th scope="col">Officer</th>
+              <th scope="col">District</th>
+              <th scope="col">Type</th>
+              <th scope="col" class="data-table__actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="citations-tbody">
+            <tr><td colspan="8" class="empty-state" data-state="loading">Loading citations&hellip;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; New York State Patrol</span>
+    </div>
+  </footer>
+
+  <div data-component="toast-host"></div>
+  <div data-component="modal-host"></div>
+  <script type="module" src="js/pages/admin-citations.js"></script>
+</body>
+</html>

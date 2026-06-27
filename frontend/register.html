@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register &middot; NY State Patrol</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header data-component="navbar" data-active="register"></header>
+
+  <main id="main" class="auth-shell">
+    <nav aria-label="Breadcrumb" style="width: min(100%, 820px); margin-bottom: var(--space-4);">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><span>Driver portal</span></li>
+        <li aria-current="page">Register</li>
+      </ol>
+    </nav>
+
+    <section class="auth-card auth-card--wide">
+      <header class="auth-card__header">
+        <span class="eyebrow">Driver portal</span>
+        <h1>Create your driver account</h1>
+        <p>Register to view notices issued against your licence and to keep your contact details current.</p>
+      </header>
+
+      <form id="register-form" class="form form--grid" novalidate>
+        <div class="form-row">
+          <label for="username">Username<span aria-hidden="true">*</span></label>
+          <input id="username" name="username" type="text" autocomplete="username" required minlength="3" maxlength="50" />
+          <p class="form-row__hint" id="username-error" data-error-for="username"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email<span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="120" />
+          <p class="form-row__hint" id="email-error" data-error-for="email"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="password">Password<span aria-hidden="true">*</span></label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required />
+          <ul class="password-requirements" id="password-requirements">
+            <li data-rule="length">At least 8 characters</li>
+            <li data-rule="upper">One uppercase letter</li>
+            <li data-rule="lower">One lowercase letter</li>
+            <li data-rule="digit">One number</li>
+          </ul>
+        </div>
+
+        <div class="form-row">
+          <label for="confirm_password">Confirm password<span aria-hidden="true">*</span></label>
+          <input id="confirm_password" name="confirm_password" type="password" autocomplete="new-password" required />
+          <p class="form-row__hint" id="confirm_password-error" data-error-for="confirm_password"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="first_name">First name<span aria-hidden="true">*</span></label>
+          <input id="first_name" name="first_name" type="text" autocomplete="given-name" required maxlength="50" />
+          <p class="form-row__hint" data-error-for="first_name"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="last_name">Last name<span aria-hidden="true">*</span></label>
+          <input id="last_name" name="last_name" type="text" autocomplete="family-name" required maxlength="50" />
+          <p class="form-row__hint" data-error-for="last_name"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="birth_date">Date of birth<span aria-hidden="true">*</span></label>
+          <input id="birth_date" name="birth_date" type="date" required />
+          <p class="form-row__hint" data-error-for="birth_date"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="licence_no">Driver licence number<span aria-hidden="true">*</span></label>
+          <input id="licence_no" name="licence_no" type="text" required minlength="4" maxlength="20" placeholder="e.g. DL123456789" />
+          <p class="form-row__hint" data-error-for="licence_no"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone<span aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="(555) 123-4567" />
+          <p class="form-row__hint" data-error-for="phone"></p>
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="address">Address<span aria-hidden="true">*</span></label>
+          <input id="address" name="address" type="text" autocomplete="street-address" required maxlength="200" />
+          <p class="form-row__hint" data-error-for="address"></p>
+        </div>
+
+        <div class="form-row form-row--full">
+          <h2 class="form-section__title">Vehicle registration</h2>
+          <p class="form-section__hint">
+            Used to link future citations to your vehicle. You can update this later from the dashboard.
+          </p>
+        </div>
+
+        <div class="form-row">
+          <label for="vehicle_plate_no">Plate number<span aria-hidden="true">*</span></label>
+          <input id="vehicle_plate_no" name="vehicle_plate_no" type="text" required maxlength="10" placeholder="e.g. ABC1234" />
+          <p class="form-row__hint" data-error-for="vehicle_plate_no"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="vehicle_plate_state">Plate state<span aria-hidden="true">*</span></label>
+          <input id="vehicle_plate_state" name="vehicle_plate_state" type="text" required maxlength="2" placeholder="NY" />
+          <p class="form-row__hint" data-error-for="vehicle_plate_state"></p>
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="vehicle_vin">VIN<span aria-hidden="true">*</span></label>
+          <input id="vehicle_vin" name="vehicle_vin" type="text" required minlength="11" maxlength="17" placeholder="17-character VIN" />
+          <p class="form-row__hint" data-error-for="vehicle_vin"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="vehicle_make">Make</label>
+          <input id="vehicle_make" name="vehicle_make" type="text" maxlength="50" placeholder="Honda" />
+        </div>
+
+        <div class="form-row">
+          <label for="vehicle_model">Model</label>
+          <input id="vehicle_model" name="vehicle_model" type="text" maxlength="50" placeholder="Civic" />
+        </div>
+
+        <div class="form-row">
+          <label for="vehicle_year">Year</label>
+          <input id="vehicle_year" name="vehicle_year" type="number" min="1900" max="2100" placeholder="2020" />
+          <p class="form-row__hint" data-error-for="vehicle_year"></p>
+        </div>
+
+        <div class="form-row form-row--full form-actions">
+          <button type="submit" class="btn btn--primary" id="register-submit">
+            <span class="btn__label">Create account</span>
+            <span class="btn__spinner" hidden></span>
+          </button>
+          <a href="login-driver.html" class="btn btn--text">Already have an account? Sign in</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; New York State Patrol</span>
+    </div>
+  </footer>
+
+  <div data-component="toast-host"></div>
+  <script type="module" src="js/pages/register.js"></script>
+</body>
+</html>
