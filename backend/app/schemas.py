@@ -96,7 +96,7 @@ class DriverRegister(BaseModel):
     phone: str = Field(..., max_length=30)
     address: str = Field(..., max_length=200)
 
-    # Vehicle registration details (assignment brief 1.2.1a).
+    # Vehicle registration details.
     # Optional at the schema level so older clients still work, but the
     # frontend form requires them.
     vehicle_vin: Optional[str] = Field(None, max_length=17)

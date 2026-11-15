@@ -1,8 +1,8 @@
-# CMP2812 Assessment 3 – NY Patrol Citation System
+# NY Patrol Citation System
 
-This project was built for the CMP2812 Full Stack Development assignment.
+A full-stack web application for recording and managing traffic citations.
 
-The backend uses FastAPI + MySQL from the earlier coursework tasks, and the frontend was built with plain HTML, CSS and JavaScript using the Fetch API (no frontend frameworks).
+The backend uses FastAPI + MySQL, and the frontend was built with plain HTML, CSS and JavaScript using the Fetch API (no frontend frameworks).
 
 The system has two main areas:
 
